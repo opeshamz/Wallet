@@ -24,7 +24,6 @@ Route::get('/user/wallet/transaction/{id}', [UserController::class, 'walletUserT
 Route::get('/users/wallets/transactions/summaries', [UserController::class, 'countSummary']);
 Route::get('/wallets/type', [UserController::class, 'getWalletType']);
 Route::group(['middleware' => 'auth:sanctum'], function () {
-
     Route::post('/wallet', [UserController::class, 'createWallet']);
     Route::post('/wallets/wallet', [UserController::class, 'walletToWallet']);
     Route::get('/user-wallet-transaction', [UserController::class, 'userWalletTransaction']);
