@@ -19,10 +19,10 @@ class CreateWalletsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('wallet_type_id');
             $table->foreign('wallet_type_id')->references('id')->on('wallet_types');
-            $table->decimal('balance', 18, 2)->default(0.0);
+            $table->decimal('balance', 18, 2)->default(10000.0);
             $table->decimal('balance_before', 18, 2)->default(0.0);
             $table->decimal('balance_after', 18, 2)->default(0.0);
-            $table->decimal('ledger_balance', 18, 2)->default(0.0);
+            $table->decimal('ledger_balance', 18, 2)->default(10000.0);
             $table->string('currency')->default('NGN');
             $table->timestamps();
         });
