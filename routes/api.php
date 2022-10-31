@@ -16,6 +16,12 @@ use App\Http\Controllers\UserController;
 |
 */
 
+Route::get('/migrate', function () {
+    Artisan::call('migrate');
+    return 'migrated succeful';
+});
+
+
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/users', [UserController::class, 'index']);
