@@ -28,16 +28,16 @@ class AuthController extends Controller
                 'password' => Hash::make($request['password']),
 
             ]);
-            Wallet::create([
-                'user_id' => $user->id,
-                'currency' => 'NGN',
-                'balance' => 0,
-                'balance_before' => 0,
-                'balance_after' => 0,
-                'ledger_balance' => 0,
-                'wallet_type_id' => 1,
-            ]);
-            //WalletService::createWallet($user->id, 'NGN', 1);
+            // Wallet::create([
+            //     'user_id' => $user->id,
+            //     'currency' => 'NGN',
+            //     'balance' => 0,
+            //     'balance_before' => 0,
+            //     'balance_after' => 0,
+            //     'ledger_balance' => 0,
+            //     'wallet_type_id' => 1,
+            // ]);
+            WalletService::createWallet($user->id, 'NGN', 1);
             return Response::success('User created successfully', $user,  201);
         } catch (\Exception $e) {
             return Response::error($e->getMessage(), 500);
