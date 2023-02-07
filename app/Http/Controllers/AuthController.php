@@ -12,7 +12,7 @@ use App\Helper\Response;
 use App\Services\WalletService;
 use App\Http\Requests\UserRegistrationRequest;
 use App\Http\Requests\LoginRequest;
-use Illuminate\Contracts\Validation\Validator;
+
 
 
 class AuthController extends Controller
