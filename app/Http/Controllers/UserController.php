@@ -103,7 +103,7 @@ class UserController extends Controller
     }
     public function fundWallet(Request $request)
     {
-        // $user = $request->user();
+
         $wallet = WalletService::fundWallet($request['to'], $request['amount']);
         return $wallet;
     }
